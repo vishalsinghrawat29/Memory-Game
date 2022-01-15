@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.memory-card');
 const times = document.getElementById('time');
-
+const textMsg = document.getElementById('win');
+const totalscore =  document.getElementById('total');
 
 let hasFlippedCard =  false;
 let lockBoard = false;
@@ -11,16 +12,39 @@ var s;
 var c;
 var score =  0;
 var countMatch = 0;
+var msg;
+var ts;
 function stopcount(){
     if(countMatch === 8){
         clearInterval(s);
+        message();
     }
+}
+function message(){
+    if(timer === 0){
+        if(countMatch === 8){
+            msg = 'Congratulations!! 💐';
+            ts = 'Your Score: ' + score + ' Points in ' + (30 - timer) + ' sec';
+        }else {
+            msg = 'Try Again!! 👍';
+            ts = 'Your Score: ' + score + ' Points in ' + (30 - timer) + ' sec';
+        }
+    }
+    else{
+        if(countMatch === 8){
+            msg = 'Congratulations!! 💐';
+            ts = 'Your Score: ' + score + ' Points in ' + (30 - timer) + ' sec';
+        }
+    }
+    textMsg.innerHTML = msg;
+    totalscore.innerHTML = ts;
 }
 function leftTime(){
     timer--;
     times.innerHTML =  timer + ' sec left to End';
     if(timer == 0){
         clearInterval(s);
+        message();
         cards.forEach(card => card.removeEventListener('click', flipCard));
     }
 }
