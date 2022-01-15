@@ -6,7 +6,7 @@ let hasFlippedCard =  false;
 let lockBoard = false;
 let firstCard, secondCard;
 var left = 4;
-var timer = 90;
+var timer = 30;
 var s;
 var c;
 var score =  0;
@@ -25,7 +25,7 @@ function leftTime(){
     }
 }
 function scoreCount(){
-    if(timer<=90 && timer>20){
+    if(timer<=30 && timer>20){
         score+=parseInt(10);
     }else if(timer<=20 && timer>10){
         score+=parseInt(5);
