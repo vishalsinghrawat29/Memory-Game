@@ -10,7 +10,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    height: 100vh;
     background-color: #07274D;
 }
 .memory-game{
