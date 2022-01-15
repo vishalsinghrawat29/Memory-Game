@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 100vh;
+    background-color: #07274D;
+}
+.memory-game{
+    width: 460px;
+    height: 460px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+.memory-card{
+    width: calc(25% - 8px);
+    height: calc(25% - 8px);
+    margin: 4px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.memory-card:active{
+    transform: scale(.95);
+    transition: transform  .2s;
+}
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+.memory-card.autoflip{
+    transform: rotateY(180deg);
+}
+
+
+.front-face, .back-face{
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    position: absolute;
+    border-radius: 5px;
+    background: #FFE144;
+    backface-visibility: hidden;
+}
+
+.front-face{
+    background: #fff383;
+    transform: rotateY(180deg);
+}
+
+.score, .time {
+    color:#fff;
+}
+#time{
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    margin:6px 0px;
+}
+#score{
+    font-family: 'Sora', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ff4d88;
+    text-align: center;
+    display:none;
+}
+.heading{
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color:#ff4d88;
+    text-align: center;
+    margin: 12px 0px 0px;
+}
+#startButton{
+    background-color: #ff4d88; 
+    border: none;
+    color: rgb(255, 255, 255);
+    margin: 12px 0px;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+}
